@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="ru">  
+<head>
+	 <meta charset="utf-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>  
+<body>
+  <script>
+    console.log( (document.getElementById('die') ? 'Я тут!' : 'Нет меня!'));
+   </script>
+    
+  <div id="die"></div>
+  
+  <script>
+    console.log((document.getElementById('die') ? 'Я тут!' : 'Нет меня!'));
+    var centerX = 500;
+    var centerY = 500;
+
+    var elt =  $('<div class = "dot"></div>').css({
+              "left": (centerX - 5) + "px",
+              "top" : (centerY - 5) + "px",
+    }).appendTo($('#die')); 
+ 	elt.data({"x": centerX, "y": centerY});
+
+    var dotTitle = "" + elt.data("x") + "X" + elt.data("y"); 
+    console.log(elt.data());
+
+    elt.title = dotTitle; 
+    console.log("title " + elt.title);
+
+    elt[0].id = dotTitle; 
+    console.log("id " + elt[0].id);
+
+	document.getElementById(dotTitle).title = dotTitle; 
+ 	console.log(  "title "  + document.getElementById(dotTitle).title); 
+
+ 	//var string  = '"' + "#" + dotTitle + '"'; 
+ 	var string  = "#" + dotTitle; 
+
+   	console.log( $(string).attr('id')); 
+   	console.log( $("div#" + dotTitle).attr('id')); 
+ 	console.log(  "title "  + document.getElementById(dotTitle).title); 
+
+ 	setNameToDot(elt[0].id, "S"); 
+
+ 	function setNameToDot(eltId, eltName){
+		var string  = "#" + eltId; 
+		var prepare = "div[title='" + eltId + "']"; 
+		console.log(prepare + ":" + eltId + " " + eltName);
+
+	/* console.log("by id");                           @why????????
+	console.log(document.getElementById(eltId));
+
+    console.log($(string)); 
+    console.log($(string).prop("id"));
+    */
+   		 console.log(document.getElementById(eltId).id);
+   		 console.log($("div#"+eltId));
+		 console.log($("div#"+eltId).prop('id'));
+		 console.log($("div#"+eltId).attr('id'));
+
+   document.getElementById(eltId).name = eltName; 
+   console.log(document.getElementById(eltId).name);
+    
+}
+
+  </script>
+</body>
+</html>

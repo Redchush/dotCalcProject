@@ -1,0 +1,153 @@
+.container .row{
+
+}
+ul[class="dropdown-menu"] li {
+	display: block; 
+	color: blue; 
+}
+#result{
+	text-align: center;
+	outline: 2px gray dotted;
+	min-height: 500px; 
+
+}
+#pictured{
+	border: 2px #018667 dashed;
+	margin-left: 20px; 
+	margin-right: 20px;
+	margin-bottom: 20px; 
+	text-align: center;
+	min-height: 50px; 
+	padding: 0px; 
+	overflow: hidden;
+}
+#paintingPanel{
+ 	/*background-color: rgba(100, 0, 0, .1 ); */
+    top : 0; 
+    z-index : 5;
+    position: relative;
+    opacity: 0.8;
+}
+
+#canvasPanel{
+	position: absolute;
+	top : 0; 
+	left: 0; 
+	z-index: 0; 
+}	
+.container-fluid{
+	min-height: 1000px; 
+}
+#innertext{
+	vertical-align: middle; 
+	text-align: center;
+}
+
+#toolbar{
+	outline: 2px gray dotted;
+	text-align: center;
+	min-height: 500px; 
+}
+.thumb {
+	position: absolute;
+	float: left; 
+	top: 0; 
+	left: 0; 
+    margin: 0; 
+    padding: 0 
+}
+.list{
+	position: absolute;
+	top: 0; 
+	left: 0px; 
+	display: block;
+	outline: 2px blue solid; 
+	margin: 0px; 
+    padding: 0px; 
+}
+/*dot #95D0AA светлая мята
+#88D5D2 (пальмы
+#019697 вишни
+#FF3314 подарок
+#F8E19F 
+#018667 */ 	
+.dot{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #F8E19F;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	z-index: 5;  
+}
+.centerOfdot{                    /* toDo */ 
+	display: inline-block;
+	margin: auto;
+	width: 8px;
+	height: 8px;
+	background: #018667;
+}
+/*square in which renders the name of dot */
+.dotName{
+	position: absolute;
+	color :  #F8E19F;
+	width: 14px;
+	height: 20px;
+	text-align: center; 
+	display: block; 
+	
+	padding: 0px; 
+}
+
+.cellText {
+	vertical-align: middle; 
+}
+
+/* dotMenu */
+.dotMenuBox{
+	display: none;
+    position: relative;
+	width: 75px;
+	background: white;
+    padding: 5px;
+    border: 1px solid black;  
+ }
+.formText{
+    position: relative;
+    vertical-align: top; 
+    display: inline-block;   
+    border: 1px solid gray;
+}
+.inputChar{
+  	height: 20px;
+  	margin-right: 1px; 
+}
+
+/* arrow in buttom */
+.buttom-container{
+ 	width: 23px;
+  	height: 20px;  
+}
+.arrow{
+  	width: 0;
+  	height: 0;  
+}
+.bottom-line{
+ 	position: absolute;
+  	border-top: 2px solid red;
+  	border-bottom: 2px solid red;
+  	border-left: 10px solid red;
+  	top: 7px;
+ 	left: 1px;
+}
+.triangle-right {
+  	position: absolute;
+  	top: 1px;
+	left: 10px;
+	border-top: 8px solid transparent;
+	border-left: 10px solid red;
+	border-bottom: 8px solid transparent;
+}
+
+
