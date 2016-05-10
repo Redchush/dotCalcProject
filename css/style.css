@@ -203,4 +203,7 @@ input[type="text"], .output {
 	border-radius: 50px;
 	
 }
+.btn-add{
+	margin-bottom: 20px; 
+}
 
