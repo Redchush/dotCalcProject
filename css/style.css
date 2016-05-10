@@ -74,20 +74,26 @@ ul[class="dropdown-menu"] li {
 
 .dot{
 	position: absolute;
-	width: 10px;
-	height: 10px;
+  width: 12px;
+	height: 12px;
 	background: #F8E19F;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-	z-index: 5;  
+  padding: 0px; 
+
+
 }
-.centerOfdot{                    /* toDo */ 
-	display: inline-block;
-	margin: auto;
-	width: 8px;
-	height: 8px;
-	background: #018667;
+
+.centerOfdot{   
+           /* toDo */ 
+  display: inline-block;
+  height:  50%; 
+  width: 50%; 
+  left:  25%; 
+  top: 25%; 
+  background: #018667;
+  margin: 0px; 
 }
 /*square in which renders the name of dot */
 .dotName{
@@ -97,7 +103,6 @@ ul[class="dropdown-menu"] li {
 	height: 20px;
 	text-align: center; 
 	display: block; 
-	
 	padding: 0px; 
 }
 
@@ -109,7 +114,7 @@ ul[class="dropdown-menu"] li {
 .dotMenuBox{
 	display: none;
     position: relative;
-	width: 75px;
+	width: 80px;
 	background: white;
     padding: 5px;
     border: 1px solid black;  
@@ -180,7 +185,7 @@ tr {
  width: 10%; 
 }
 
-input[type="text"], .output {
+.tableBody input[type="text"], .output {
     outline: none;
   
     color: #999;
@@ -188,7 +193,7 @@ input[type="text"], .output {
     margin: 0;
     border: none;
    
-    width: 100%; 
+    width: 100%; 	
 }
 .calcType:hover{
 }

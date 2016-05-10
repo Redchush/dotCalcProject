@@ -4,19 +4,7 @@ var dotVaul = (function() {
     var dotInstance; 
     var dots = new Object();  
     return { // методы доступные извне
-        addItem: function(values) {
-            basket.push(values);
-        },
-        getItemCount: function() {
-            return basket.length;
-        },
-        getTotal: function() {
-           var q = this.getItemCount(),p=0;
-            while(q--){
-                p+= basket[q].price; 
-            }
-            return p;
-        },
+     
         getNameByDot : function($dot){  
             for(prop in dots) {
                 console.log(dots[prop] === $dot);
@@ -36,7 +24,8 @@ var dotVaul = (function() {
       
         },
         print : function(){
-          console.log("current vault state" + dots);
+          console.log("current vault state: ");
+          console.log(dots);
         }
 
     };

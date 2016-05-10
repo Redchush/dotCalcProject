@@ -1,5 +1,4 @@
 var dotMenu;
-
 var freeHeight;
 var freeWidth; 
          // menu for enter the name
@@ -74,7 +73,7 @@ var createPaintinPanel = function(adjImg){
   dotMenu.$menu.prependTo("#paintingPanel"); 
   //painting panel event hadler
   $("#paintingPanel").click(function(evt) {
-    createDot(evt, this); 
+    DotManager.createDot(evt, this); 
   }); 
 }; 
 var hideText =  function(){

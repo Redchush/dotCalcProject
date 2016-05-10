@@ -12,8 +12,10 @@ function DotMenu(){
   
   $instance = {
     $menu : $('.dotMenuBox').mouseleave( function(evt){
+       setTimeout(1500); 
        $instance.$menu.css("display", "none"); 
     }),
+
     $form : $('#dotNameForm'), 
     $currentDot: null,  
     $inputForm : $('.inputChar').keypress(keypressHandle),
@@ -27,12 +29,13 @@ function DotMenu(){
         console.log("dot1 " +   $instance.$currentDot[0]);
         var text = $instance.$inputForm.val(); 
         var $dot = $instance.$currentDot; 
+
         if (!dotVaul.contains(text)) {
           var sameDot = dotVaul.getNameByDot($dot); 
           if (sameDot) { 
             dotVaul.removeDot(sameDot); 
-            changeTextToDot($dot, text); 
-          } else   setNameToDot($dot, text);
+            DotManager.changeTextToDot($dot, text); 
+          } else   DotManager.setNameToDot($dot, text);
           dotVaul.setDot(text, $dot);
         } else  alert("exitst yet!");  
 
@@ -53,7 +56,7 @@ function DotMenu(){
     if (dotVaul.contains(text)) {
       alert("keypress exitst yet!");
     } 
-    console.log("keypress " + text + " " + code);   
+  //  console.log("keypress " + text + " " + code);   
   }
   return $instance; 
 }
