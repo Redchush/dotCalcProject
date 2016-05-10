@@ -1,0 +1,56 @@
+.tool-container{
+  width: 95px;
+  height: auto;
+  background-color: white; 
+}  
+.tool-row{
+  padding: 5px; 
+  width: auto;
+  height: auto;
+  background-color: white; 
+}
+.tool-item{
+  position: relative; 
+  display: inline-block; 
+  float: left;
+  border-right: 0;
+  border-left: 0;
+}
+.tool-item {
+  height: 100%;
+  display: block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  padding: 10px;
+  margin: 3px; 
+   background-color: blue; 
+  transition: none;
+  -moz-border-radius: 15px;
+	-webkit-border-radius: 50px;
+	border-radius: 7px;
+
+}
+.small{
+  width: 0.5px;
+  height: 0.5px;
+  margin: 1px; 
+}
+.small:first-child{
+   background-color: red;
+}
+
+.tool-item.selected,
+.tool-item:hover {
+  background: #02baf2;
+}
+.tool-top .tool-item:first-child:hover,
+.tool-bottom .tool-item:first-child:hover {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.arrow {
+  border-color: #5e696d transparent transparent;
+  left: 50%;
+  bottom: -14px;
+}
