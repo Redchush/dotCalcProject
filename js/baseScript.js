@@ -1,4 +1,5 @@
 var dotMenu;
+
 var freeHeight;
 var freeWidth; 
          // menu for enter the name
@@ -18,8 +19,10 @@ function prepareData(){
   freeHeight = space; 
   console.log("Offset from picture" + busy);
    //for dot menu data limitation 
- dotMenu = new DotMenu(); 
+  dotMenu = new DotMenu(); 
+
 }
+
 function handleFileSelect(evt) {
   var downloadedFile = evt.target.files[0]; // FileList object
       // Only process image files.

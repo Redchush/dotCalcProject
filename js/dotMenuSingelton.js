@@ -1,20 +1,21 @@
 
 function DotMenu(){
   var $instance;
+ 
+
   DotMenu = function(){
     return $instance; 
   };
   DotMenu.prototype = this;
   $instance = new DotMenu();
   $instance.constructor = DotMenu;
-
+  
   $instance = {
     $menu : $('.dotMenuBox').mouseleave( function(evt){
        $instance.$menu.css("display", "none"); 
     }),
     $form : $('#dotNameForm'), 
     $currentDot: null,  
-    dotNameArray: new Object(), 
     $inputForm : $('.inputChar').keypress(keypressHandle),
     $submitButtom : $('.buttom-container').click($clickHandle), 
   };
@@ -24,23 +25,20 @@ function DotMenu(){
         $instance.$menu.css("display", "none"); 
   //console.log(" dot in menu " + dotMenu.data("dot"));
         console.log("dot1 " +   $instance.$currentDot[0]);
-      
         var text = $instance.$inputForm.val(); 
-        var array = $instance.dotNameArray; 
         var $dot = $instance.$currentDot; 
-
-        if (!array[text]) {
-          var sameDot = getNameByDot($dot); 
+        if (!dotVaul.contains(text)) {
+          var sameDot = dotVaul.getNameByDot($dot); 
           if (sameDot) { 
-            delete array[sameDot]; 
+            dotVaul.removeDot(sameDot); 
             changeTextToDot($dot, text); 
           } else   setNameToDot($dot, text);
-          array[text] = $dot ;
+          dotVaul.setDot(text, $dot);
         } else  alert("exitst yet!");  
 
         evt.stopPropagation();
         $instance.$inputForm.val("");  
-        console.log($instance.dotNameArray); // get dot by name
+        dotVaul.print();
   }
 
   function keypressHandle(e){
@@ -52,21 +50,11 @@ function DotMenu(){
        return false; 
     }
     var text = String.fromCharCode(code);
-    if ($instance.dotNameArray[text]) {
+    if (dotVaul.contains(text)) {
       alert("keypress exitst yet!");
     } 
     console.log("keypress " + text + " " + code);   
   }
-
-  function getNameByDot($dot){  
-    for(prop in $instance.dotNameArray) {
-        console.log($instance.dotNameArray[prop] === $dot);
-        if ($instance.dotNameArray[prop] === $dot){
-          return prop; 
-        }
-    }
-  }
-
   return $instance; 
 }
 
