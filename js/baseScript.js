@@ -45,7 +45,6 @@ function handleFileSelect(evt) {
       $("#fileLoader").attr("display", "none"); 
       $adjustPanel(image, $("#pictured"));   
       if (elt) {
-        console.log("true"); 
         elt.setAttribute("src", e.target.result); 
         elt.title = escape(theFile.name);  
         $adjustPanel(image, $(".panels")); 
@@ -81,10 +80,17 @@ var hideText =  function(){
 };
 
 function $adjustPanel(image, $elt){
+  $elt.css({
+            "height": image.height + "px",
+            "width": image.width + "px" 
+  }); 
+  //$elt.attr("width", image.height + "px"); 
   $elt.attr({
             "height": image.height + "px",
             "width": image.width + "px" 
-    }); 
+  }); 
+
+
   console.log( $elt.attr("id") + $elt.height() + " " + $elt.width()  ); 
   return $elt; 
 }

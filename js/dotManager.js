@@ -20,18 +20,45 @@ var DotManager = (function() {
     function makeLine($elt){
       console.log("in makeline");
 
-       dotsToLine.css("background-color", "blue");
+      /* dotsToLine.css("background-color", "blue");
        $elt.css("background-color", "blue");
 
        var canvasPanel = document.getElementById("canvasPanel"),
-       
+     
        ctx = canvasPanel.getContext('2d');
        ctx.beginPath();
        ctx.fillStyle = "orange";
        ctx.lineWidth = 6; 
        ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
        ctx.lineTo($elt.data("x"), $elt.data("y"));
+       ctx.stroke(); */
+
+       var canvasPanel = document.getElementById("canvasPanel"),
+       
+       ctx = canvasPanel.getContext('2d');
+       
+       ctx.beginPath();
+       ctx.strokeStyle = "blue";
+       ctx.lineWidth = 1; 
+       ctx.moveTo(1,1); 
+       ctx.lineTo(55, 55);
+       ctx.fill(); 
+       ctx.strokeRect(100, 100, 2, 2);
+       // ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
+       // ctx.lineTo($elt.data("x"), $elt.data("y"));
        ctx.stroke(); 
+
+       ctx.fillStyle = "gray"; 
+       ctx.fillRect(105, 105, 14, 14);
+  
+       ctx.font = '24px "Tahoma"';
+        ctx.fillText("Hello World!", 0, 0);
+        ctx.beginPath();
+        ctx.fillStyle = "pink"; 
+        ctx.moveTo(20, 50);
+        ctx.lineTo(220, 80);
+        ctx.quadraticCurveTo(150, 100, 260, 170);
+        ctx.closePath();
 
        dotsToLine = undefined; 
     }
