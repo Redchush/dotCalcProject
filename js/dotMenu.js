@@ -1,9 +1,6 @@
 function DotMenu(){
   var $instance;
-  
- 
-
-    this.$menu = $('.dotMenuBox'),
+      this.$menu = $('.dotMenuBox'),
     this.$form = $('#dotNameForm'), 
     this.$currentDot = null,  
     this.dotNameArray =  new Array(), 
