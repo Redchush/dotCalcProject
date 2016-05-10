@@ -33,12 +33,10 @@ var dotVaul = (function() {
         }, 
         setDot : function(name, $dot){
           dots[name] = $dot ;
-        
+      
         },
         print : function(){
-            for(prop in dots) {
-                console.log(dots[prop].id + "" + prop);
-            }
+          console.log("current vault state" + dots);
         }
 
     };
