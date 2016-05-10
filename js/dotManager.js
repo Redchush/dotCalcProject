@@ -1,6 +1,5 @@
 var DotManager = (function() {
-    
-    function isRectIntersect(eltA, bx, by, bx1, by1){
+   function isRectIntersect(eltA, bx, by, bx1, by1){
       var a = parseToFourCoordinateRelative(eltA); 
       // console.log(a.y > by1 || a.y1 < by || a.x1 < bx || a.x > bx1);
       return !(a.y > by1 || a.y1 < by || a.x1 < bx || a.x > bx1);
@@ -20,46 +19,18 @@ var DotManager = (function() {
     function makeLine($elt){
       console.log("in makeline");
 
-      /* dotsToLine.css("background-color", "blue");
+       dotsToLine.css("background-color", "blue");
        $elt.css("background-color", "blue");
 
        var canvasPanel = document.getElementById("canvasPanel"),
-     
+  
        ctx = canvasPanel.getContext('2d');
-       ctx.beginPath();
-       ctx.fillStyle = "orange";
-       ctx.lineWidth = 6; 
-       ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
-       ctx.lineTo($elt.data("x"), $elt.data("y"));
-       ctx.stroke(); */
-
-       var canvasPanel = document.getElementById("canvasPanel"),
-       
-       ctx = canvasPanel.getContext('2d');
-       
        ctx.beginPath();
        ctx.strokeStyle = "blue";
-       ctx.lineWidth = 1; 
-       ctx.moveTo(1,1); 
-       ctx.lineTo(55, 55);
-       ctx.fill(); 
-       ctx.strokeRect(100, 100, 2, 2);
-       // ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
-       // ctx.lineTo($elt.data("x"), $elt.data("y"));
+       ctx.lineWidth = 2; 
+       ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
+       ctx.lineTo($elt.data("x"), $elt.data("y"));
        ctx.stroke(); 
-
-       ctx.fillStyle = "gray"; 
-       ctx.fillRect(105, 105, 14, 14);
-  
-       ctx.font = '24px "Tahoma"';
-        ctx.fillText("Hello World!", 0, 0);
-        ctx.beginPath();
-        ctx.fillStyle = "pink"; 
-        ctx.moveTo(20, 50);
-        ctx.lineTo(220, 80);
-        ctx.quadraticCurveTo(150, 100, 260, 170);
-        ctx.closePath();
-
        dotsToLine = undefined; 
     }
     function activate($elt){
@@ -67,11 +38,18 @@ var DotManager = (function() {
         dotsToLine = $elt;
     }
 
+    
+
+    function changeColor($elt, color){
+
+    }
+
     return { // методы доступные извне   
         createDot : function(evt, this_ ){
     //  var dotMenu = new DotMenu();     
         var centerX = evt.pageX  - $(this_).offset().left; 
         var centerY = evt.pageY  - $(this_).offset().top; 
+
         if (  $(".dot").toArray().some(function($elt) {
            return isRectIntersect($elt, centerX-5, centerY-5, centerX+5, centerY+5);
             })) 
@@ -84,24 +62,24 @@ var DotManager = (function() {
                   "top" : (centerY - 5) + "px",
         }).prependTo(evt.target); 
          
-        $elt.data({"x": centerX, "y": centerY})   
+        $elt.children().andSelf().data({"x": centerX, "y": centerY})   
         $elt[0].id = $elt.data("x") + "x" + $elt.data("y"); ; 
        // console.log("id " + $elt[0].id)
 
         $elt.contextmenu(function(evt){ 
-           dotMenu.$currentDot = $elt;    
-        // console.log("dot" + dotMenu.$currentDot);
-          showElement(dotMenu.$menu, $elt.data("x") + 10, $elt.data("y") - 40 );  
+          console.log(dotMenu);
+          dotMenu.$currentDot = $elt;    
+          console.log("dot" + dotMenu.$currentDot);
+          Initialisator.showElement(dotMenu.$menu, $elt.data("x") + 10, $elt.data("y") - 40 );  
           dotMenu.$inputForm[0].focus();   
           evt.stopPropagation();          
         });
 
         $elt.on("click", function(evt){
        //   console.log("in click on dot" + evt.target.firstChild);
-            var realTarget = $(evt.target.firstChild || evt.target );
-          //  console.log(dotsToLine.unshift(realTarget) === 2);
-            dotsToLine ? makeLine(realTarget) : activate(realTarget);        
-            evt.stopPropagation(); 
+          var dotCenter = $(evt.target.firstChild || evt.target );
+          dotsToLine ? makeLine(dotCenter) : activate(dotCenter);        
+          evt.stopPropagation(); 
         }); 
          //todo          
         $elt[0].draggable = true; 

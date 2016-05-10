@@ -74,26 +74,24 @@ ul[class="dropdown-menu"] li {
 
 .dot{
 	position: absolute;
-  width: 12px;
+  	width: 12px;
 	height: 12px;
 	background: #F8E19F;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-  padding: 0px; 
-
-
+  	padding: 0px; 
 }
 
 .centerOfdot{   
            /* toDo */ 
-  display: inline-block;
-  height:  50%; 
-  width: 50%; 
-  left:  25%; 
-  top: 25%; 
-  background: #018667;
-  margin: 0px; 
+	display: inline-block;
+  	height:  50%; 
+  	width: 50%; 
+  	left:  25%; 
+  	top: 25%; 
+  	background: #018667;
+  	margin: 0px; 
 }
 /*square in which renders the name of dot */
 .dotName{

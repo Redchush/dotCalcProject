@@ -107,12 +107,12 @@
                  <td> 
                  <select class="calcType"> 
                  <option value="angle"> ∠ </option> 
-                 <option > l </option> 
-                 <option> S </option> 
+                 <option value="length"> l </option> 
+                 <option value="square"> S </option> 
                   <select> 
 
                 </td>
-                 <td><input type ="text" placeholder="Введите вершины"> </td>
+                 <td><input type ="text" placeholder="Введите вершины" class="calcInput"> </td>
                  <td class="output" >Результат</td>
                  <td> <buttom type="submit" class="calcButtom"> </buttom> </td>
                </tr>
@@ -139,7 +139,10 @@
       <script src="js/Calculator.js"></script>
       
       <script src="js/dotMenuSingelton.js"></script>
-      <script src="js/baseScript.js"></script>
+       <!-- <script src="js/baseScript.js"></script> -->
+      <script src="js/autocomplete.js"></script>
+
+
 
       <script src="js/dotManager.js"></script>
       <script src="js/loggingFunctions.js"></script>

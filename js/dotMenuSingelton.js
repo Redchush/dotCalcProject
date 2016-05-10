@@ -1,8 +1,5 @@
-
 function DotMenu(){
   var $instance;
- 
-
   DotMenu = function(){
     return $instance; 
   };
