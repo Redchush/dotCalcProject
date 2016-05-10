@@ -81,7 +81,7 @@ var hideText =  function(){
 };
 
 function $adjustPanel(image, $elt){
-  $elt.css({
+  $elt.attr({
             "height": image.height + "px",
             "width": image.width + "px" 
     }); 

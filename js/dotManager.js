@@ -1,6 +1,5 @@
 var DotManager = (function() {
     
-
     function isRectIntersect(eltA, bx, by, bx1, by1){
       var a = parseToFourCoordinateRelative(eltA); 
       // console.log(a.y > by1 || a.y1 < by || a.x1 < bx || a.x > bx1);
@@ -17,8 +16,29 @@ var DotManager = (function() {
     }
   //  var $elt =  $('<div class = "dot"><div class="dot centerOfdot"></div></div>'); why?????
     var dotHTML = '<div class = "dot"><div class="dot centerOfdot"></div></div>'; 
+    var dotsToLine; 
+    function makeLine($elt){
+      console.log("in makeline");
 
+       dotsToLine.css("background-color", "blue");
+       $elt.css("background-color", "blue");
 
+       var canvasPanel = document.getElementById("canvasPanel"),
+       
+       ctx = canvasPanel.getContext('2d');
+       ctx.beginPath();
+       ctx.fillStyle = "orange";
+       ctx.lineWidth = 6; 
+       ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
+       ctx.lineTo($elt.data("x"), $elt.data("y"));
+       ctx.stroke(); 
+
+       dotsToLine = undefined; 
+    }
+    function activate($elt){
+        $elt.css("background-color", "red");   
+        dotsToLine = $elt;
+    }
 
     return { // методы доступные извне   
         createDot : function(evt, this_ ){
@@ -42,8 +62,7 @@ var DotManager = (function() {
        // console.log("id " + $elt[0].id)
 
         $elt.contextmenu(function(evt){ 
-        
-          dotMenu.$currentDot = $elt;    
+           dotMenu.$currentDot = $elt;    
         // console.log("dot" + dotMenu.$currentDot);
           showElement(dotMenu.$menu, $elt.data("x") + 10, $elt.data("y") - 40 );  
           dotMenu.$inputForm[0].focus();   
@@ -52,14 +71,12 @@ var DotManager = (function() {
 
         $elt.on("click", function(evt){
        //   console.log("in click on dot" + evt.target.firstChild);
-            $(evt.target.firstChild || evt.target ).css("background-color", "red");
+            var realTarget = $(evt.target.firstChild || evt.target );
+          //  console.log(dotsToLine.unshift(realTarget) === 2);
+            dotsToLine ? makeLine(realTarget) : activate(realTarget);        
             evt.stopPropagation(); 
         }); 
-
-       /* $(".centerOfdot").on("click", function(evt){
-              evt.target.parentNode.click(); 
-        }); */
-     //todo          
+         //todo          
         $elt[0].draggable = true; 
         $elt[0].ondragstart = function(evt){
         var dt = evt.dataTransfer; 
@@ -71,20 +88,17 @@ var DotManager = (function() {
                     "left": (- 15) + "px",
                     "top" : (- 15) + "px",
                     "display" : "block", 
-          }).appendTo($elt); 
+        }).appendTo($elt); 
           
-          $elt.attr("name", eltName); 
-          $elt[0].name = eltName; 
+        $elt.attr("name", eltName); 
+        $elt[0].name = eltName; 
          // console.log("name " + $elt[0].name + $elt.attr("name"));
       }, 
       
       changeTextToDot : function($elt, eltName){
         $elt.attr("name", eltName).children(".dotName").text(eltName); 
-      }      
-
-
+      }
     };
-
 }());
 
 
