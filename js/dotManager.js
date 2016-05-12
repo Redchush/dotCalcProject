@@ -14,7 +14,7 @@ var DotManager = (function() {
         };
     }
   //  var $elt =  $('<div class = "dot"><div class="dot centerOfdot"></div></div>'); why?????
-    var dotHTML = '<div class = "dot"><div class="dot centerOfdot"></div></div>'; 
+    var dotHTML = '<div class = "dot borderOfdot"><div class="dot centerOfdot"></div></div>'; 
     var dotsToLine; 
     function makeLine($elt){
       console.log("in makeline");
@@ -31,14 +31,15 @@ var DotManager = (function() {
        ctx.moveTo(dotsToLine.data("x"), dotsToLine.data("y")); 
        ctx.lineTo($elt.data("x"), $elt.data("y"));
        ctx.stroke(); 
+
        dotsToLine = undefined; 
     }
+
     function activate($elt){
         $elt.css("background-color", "red");   
         dotsToLine = $elt;
     }
-
-    
+   
 
     function changeColor($elt, color){
 
@@ -62,8 +63,8 @@ var DotManager = (function() {
                   "top" : (centerY - 5) + "px",
         }).prependTo(evt.target); 
          
-        $elt.children().andSelf().data({"x": centerX, "y": centerY})   
-        $elt[0].id = $elt.data("x") + "x" + $elt.data("y"); ; 
+        $elt.children().andSelf().data({"x": centerX, "y": centerY}) ;  
+        $elt[0].id = $elt.data("x") + "x" + $elt.data("y"); 
        // console.log("id " + $elt[0].id)
 
         $elt.contextmenu(function(evt){ 
@@ -72,13 +73,17 @@ var DotManager = (function() {
           console.log("dot" + dotMenu.$currentDot);
           Initialisator.showElement(dotMenu.$menu, $elt.data("x") + 10, $elt.data("y") - 40 );  
           dotMenu.$inputForm[0].focus();   
-          evt.stopPropagation();          
+          
+          evt.preventDefault();  
+          evt.stopPropagation();   
+        
         });
 
         $elt.on("click", function(evt){
-       //   console.log("in click on dot" + evt.target.firstChild);
+          console.log("in click on dot" + evt.target.firstChild + " buttom " + evt.button);
           var dotCenter = $(evt.target.firstChild || evt.target );
-          dotsToLine ? makeLine(dotCenter) : activate(dotCenter);        
+          dotsToLine ? makeLine(dotCenter) : activate(dotCenter) ; 
+
           evt.stopPropagation(); 
         }); 
          //todo          

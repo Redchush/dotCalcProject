@@ -11,18 +11,13 @@ var Initialisator = (function() {
 
   function hadleLoad(){
     prepareData(); 
-     auto(); 
+    setPicture(); 
   }
-
-   function auto(){
-  /*    console.log("hallo autocomplete");
-      $(".dropdown-toggle").click(); 
-    
-      console.log("two clicks done!"); */
-      setPicture(); 
-
-  }
-
+  $(document).ready(function(){
+        $(document).bind("contextmenu",function(e){
+        return false;
+      });
+   });
 
   //onload function
   function prepareData(){
@@ -34,10 +29,7 @@ var Initialisator = (function() {
      //for dot menu data limitation 
     dotMenu = new DotMenu(); 
     console.log("in prepere " + dotMenu);
-    
-
-
-  }
+ }
 
   function setPicture(evt) {
     // FileList object
@@ -67,7 +59,7 @@ var Initialisator = (function() {
        $adjustPanel(image, $("#pictured"));   
                 // logElementParameters(output); 
        createPaintinPanel(image);   
-             
+          
         hideText();   
    }
 
@@ -79,15 +71,17 @@ var Initialisator = (function() {
     dotMenu.$menu.prependTo("#paintingPanel"); 
     //painting panel event hadler
     $("#paintingPanel").click(function(evt) {
+       logClick(evt); 
       DotManager.createDot(evt, this); 
     });
+
    
   }; 
 
  
   function hideText(){
     $("#innertext").css("display","none" ); 
-  };
+  }
 
   function $adjustPanel(image, $elt){
     $elt.css({

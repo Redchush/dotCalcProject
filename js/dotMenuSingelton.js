@@ -53,7 +53,7 @@ function DotMenu(){
     if (dotVaul.contains(text)) {
       alert("keypress exitst yet!");
     } 
-  //  console.log("keypress " + text + " " + code);   
+   console.log("keypress " + text + " " + code);   
   }
   return $instance; 
 }

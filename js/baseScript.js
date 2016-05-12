@@ -47,6 +47,7 @@ var Initialisator = (function() {
         // Only process image files.
      if (!downloadedFile.type.match('image.*')) {
       alert("It isn't image");
+      
       return; 
     }
 
@@ -93,6 +94,7 @@ var Initialisator = (function() {
     dotMenu.$menu.prependTo("#paintingPanel"); 
     //painting panel event hadler
     $("#paintingPanel").click(function(evt) {
+     
       DotManager.createDot(evt, this); 
     }); 
   }; 

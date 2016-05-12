@@ -43,7 +43,7 @@ function logOverlappingElements(eltA, bx, by, bx1, by1){
     console.log(a.x1 + " " + bx);
 }
 function logClick(evt){
-	console.log("click done! ");
+	   console.log("click done! ");
     console.log("at: page " + evt.pageX + " " + evt.pageY);
     console.log("at: client " + evt.clientX+ " " + evt.clientY);   
 }
