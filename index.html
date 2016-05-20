@@ -15,6 +15,7 @@
   <!-- Bootstrap -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/dotMenu.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,9 +23,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
     </head>
-
-
-
 
     <body>
      <div class="navbar navbar-inverse navbar-static-top" id="topMenu">
@@ -66,15 +64,28 @@
     </div>
   </div>
 
-<div class="dotMenuBox">
+<ul class="dotMenuBox" >
+  <li > 
       <form id="dotNameForm">
           <input type="text" size = 1 max-lenght = 1 class="inputChar formText" id>           
           <buttom type="submit" class="formText  buttom-container "> 
-              <div class=bottom-line arrow> </div> 
-              <div class=triangle-right arrow> </div> 
+              <div class="bottom-line arrow"> </div> 
+              <div class="triangle-right arrow"> </div> 
           </buttom>   
       </form>
-</div> 
+    </li>
+    
+  <li> 
+      <ul class= "dotMenuButtoms"> 
+        <li> </li>
+        <li> </li>
+        <li> </li> 
+        <li> </li> 
+        
+      </ul> 
+  </li> 
+</ul> 
+
 
 
     <div class = "container-fluid"> 
@@ -92,7 +103,7 @@
 
         <div class="col-md-12 col-lg-2" id="result">
            <h4> Результирующие данные <h4> 
-           <button type="buttom" class="btn-add">Добавить</button>
+           <button type="button" class="btn-add">Добавить</button>
            <table>
              <thead> 
                <tr class="tableHeader">
@@ -147,9 +158,9 @@
       <script src="js/dotManager.js"></script>
       <script src="js/loggingFunctions.js"></script>
       <script src="js/test.js"></script>
-       <script src="js/LineClass.js"></script>
-    
+      <script src="js/LineClass.js"></script>
+      <script src="js/controller.js"></script>
+      <script src="js/model.js"></script>
      
-
-    </body>
+      </body>
  </html>

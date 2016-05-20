@@ -1,0 +1,273 @@
+/*icons-edition* to poor chose*/
+ul.dotMenuBox{
+ position: relative;
+ padding: 0;
+ list-style: none;
+ width: 100px;
+ height: auto; 
+ background: white;
+ border: 1px solid black;  
+}
+
+ul.dotMenuBox > li {
+  margin : 0px; 
+  padding: 0px; 
+}
+ul.dotMenuBox > li:first-child {
+    padding: 5px 5px 0px 5px; 
+}
+
+ul.dotMenuButtoms{ 
+   position: relative;
+   list-style: none;
+   padding: 0px;
+   text-align: center; 
+   vertical-align: top; 
+}
+ul.dotMenuButtoms > li {
+    display: inline-block;
+    width: 27px;
+    height: 30px;
+    border-radius: 7px; 
+    background-image: url(images/icons-edition.png); 
+    background-repeat: no-repeat; 
+    background-size: 450px auto; 
+    background-position: -2px -45px;
+    margin: 0px; 
+ }
+ul.dotMenuButtoms > li:nth-child(3n) {
+  background-position: -48px 2px;
+}
+ul.dotMenuButtoms > li:nth-child(4n) {
+   background-position: -48px -184px;
+}
+ul.dotMenuButtoms > li:first-child {
+   width: 95%;
+   height: 5px;
+   border-radius: 2px;
+   background: gray;  
+  
+}
+
+.formText{
+    position: relative;
+    display: inline-block;   
+    border: 1px solid gray;
+    height: 100%;
+    box-sizing: border-box; 
+}
+#dotNameForm{
+   display: block; 
+   background: white;
+   height: 25px;  
+}
+.inputChar{
+   width: 50px;  
+}
+
+/* arrow in buttom */
+.buttom-container{
+  width: 27px;
+  float: right; 
+  background-image: url(images/icons-edition.png); 
+  background-repeat: no-repeat; 
+  background-size: 400px auto; 
+  background-position: -42px -2px;
+}
+
+
+
+
+/* dotMenu */
+/* dotMenu icon edition*/
+ul.dotMenuBox{
+ position: relative;
+ padding: 0;
+ list-style: none;
+ width: 85px;
+ height: auto; 
+ background: white;
+ border: 1px solid black;  
+}
+
+ul.dotMenuBox > li {
+  margin : 0px; 
+  padding: 0px; 
+}
+ul.dotMenuBox > li:first-child {
+    padding: 5px 5px 0px 5px; 
+    margin: 0px 0px -15px 0px; 
+}
+
+ul.dotMenuButtoms{ 
+   position: relative;
+   list-style: none;
+   margin: -20px 0px 0px;
+   padding: 0;
+   text-align: center; 
+   vertical-align: top; 
+}
+ul.dotMenuButtoms > li {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 7px; 
+    background-image: url(images/icons-edition.png); 
+    background-repeat: no-repeat; 
+    background-size: 350px auto; 
+
+   
+ }
+ul.dotMenuButtoms > li:nth-child(3n) {
+  background-position: -244px -181px;
+}
+ul.dotMenuButtoms > li:nth-child(4n) {
+   background-position: -30px -90px;
+}
+ul.dotMenuButtoms > li:first-child {
+   width: 95%;
+   height: 5px;
+   border-radius: 2px;
+   background: gray;  
+   box-sizing: border-box; 
+}
+
+.formText{
+    position: relative;
+    display: inline-block;   
+    border: 1px solid gray;
+    height: 100%;
+    box-sizing: border-box; 
+}
+#dotNameForm{
+   display: block; 
+   background: white;
+   height: 20px;  
+}
+.inputChar{
+   width: 40px;  
+}
+
+/* arrow in buttom */
+.buttom-container{
+  width: 22px;
+  float: right; 
+}
+
+buttom.formText > div {
+  position: absolute;   
+  width: 0;
+  height: 0;  
+}
+buttom.formText> .bottom-line{
+  border-top: 3px solid red;
+  border-bottom: 2px solid red;
+  border-left: 10px solid red;
+  top: 7px;
+  left: 1px;
+}
+buttom > .triangle-right {
+  top: 0px;
+  left: 10px;
+  border-top: 9px solid transparent;
+  border-left: 10px solid red;
+  border-bottom: 9px solid transparent;
+}
+
+
+
+
+ /*ideal */
+ul.dotMenuBox{
+ position: relative;
+ padding: 0;
+ list-style: none;
+ width: 85px;
+ height: auto; 
+ background: white;
+ border: 1px solid black;  
+}
+
+ul.dotMenuBox > li {
+  margin : 0px; 
+  padding: 0px; 
+}
+ul.dotMenuBox > li:first-child {
+    padding: 5px 5px 0px 5px; 
+    margin: 0px 0px -15px 0px; 
+}
+
+ul.dotMenuButtoms{ 
+   position: relative;
+   list-style: none;
+   margin: -20px 0px 0px;
+   padding: 0;
+   text-align: center; 
+   vertical-align: top; 
+}
+ul.dotMenuButtoms > li {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px; 
+    background-image: url(../images/ideal.png); 
+    background-repeat: no-repeat; 
+    background-size: 600px auto; 
+    background-position: -582px 2px;
+    border: 1px solid black;  
+ }
+ul.dotMenuButtoms > li:nth-child(3n) {
+  background-position: -244px -181px;
+}
+ul.dotMenuButtoms > li:nth-child(4n) {
+   background-position: -30px -90px;
+}
+ul.dotMenuButtoms > li:first-child {
+   width: 95%;
+   height: 5px;
+   border-radius: 2px;
+   background: gray;  
+   box-sizing: border-box; 
+}
+
+.formText{
+    position: relative;
+    display: inline-block;   
+    border: 1px solid gray;
+    height: 100%;
+    box-sizing: border-box; 
+}
+#dotNameForm{
+   display: block; 
+   background: white;
+   height: 20px;  
+}
+.inputChar{
+   width: 40px;  
+}
+
+/* arrow in buttom */
+.buttom-container{
+  width: 22px;
+  float: right; 
+}
+
+buttom.formText > div {
+  position: absolute;   
+  width: 0;
+  height: 0;  
+}
+buttom.formText> .bottom-line{
+  border-top: 3px solid red;
+  border-bottom: 2px solid red;
+  border-left: 10px solid red;
+  top: 7px;
+  left: 1px;
+}
+buttom > .triangle-right {
+  top: 0px;
+  left: 10px;
+  border-top: 9px solid transparent;
+  border-left: 10px solid red;
+  border-bottom: 9px solid transparent;
+}

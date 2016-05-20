@@ -1,13 +1,13 @@
 
 
+/* global model */
+
 filldotNames(); 
 
 function filldotNames(){ 
 
-	panel =	$("#paintingPanel")[0]; 
-	form =  $(".inputChar"); 	 
-
-	
+	var panel =	$("#paintingPanel")[0]; 
+	var form =  $(".inputChar"); 	 
 
 	var e3 = new MouseEvent("click", {
 		 buttom: 4
@@ -30,7 +30,7 @@ function filldotNames(){
 	}
 	function initialiseDot(dot, code){
 		dot.contextmenu();
-		console.log("start pressing");
+	//	console.log("start pressing");
 	
 		form[0].dispatchEvent(getKeyBoarEvent(code)); 
 		form.val( String.fromCharCode(code));
@@ -44,7 +44,7 @@ function filldotNames(){
 
     window.setTimeout( 
 			function(){
-			console.log("in setTimeout ");
+		//	console.log("in setTimeout ");
 			panel.dispatchEvent(getMouseEvent(200, 200)); 
 			panel.dispatchEvent(getMouseEvent(300, 300));
 			panel.dispatchEvent(getMouseEvent(200, 300));
@@ -52,25 +52,39 @@ function filldotNames(){
 			var dots = $(".borderOfdot"); 
 			var i = 0; 
 	        dots.each(function(ind, elt) { 
-	        	console.log(i + "" + elt);
-	        	$(elt).click();
 	        	initialiseDot($(elt), 65 + (i++));
-	        })
-	        dots.first().click();
+	        });
 
- 			/*dots.first().click(); 
- 			dots.last().click(); 
+	        dots.each(function(ind, elt) { 
+	        	$(elt).click();
+	        	$(dots[ind+1]).click();
+	        });
+	       dots.first().click();
+	       model.printAllLines();
 
- 			dots.first().click();
- 			dots[1].click(); 
- 			for (var i = dots.length - 1; i >= 0; i--) {
- 			 	initialiseDot(dots[i], 65+i);
- 			 }; */
+ 		
+		}, 1000);
+     var i = 0; 
+    window.setInterval(  function() {
+        function getI(){
+            return i++; 
+        };
+        console.log(getI()); 
+        model.printAllLines();
+        model.printAllDots();
+       
+        
+        if (model.getLineByName("AB")) {
+        	 var dot1 = model.getLineByName("AB").firstDot; 
+	        console.log("first in AB: " + dot1.prop("name") + " attr " +  dot1.attr("name") + " " + dot1.val("name")); 
+	        var dot2 = model.getLineByName("AB").secondDot; 
+	        console.log("second in AB: " + dot2.prop("name")+ " attr" + dot1.attr("name")+ " " + dot1.val("name")); 
+		    var lineName = model.getLineByName("AB").name;     
+		    var lineget = model.getLineByName("AB").getName(); 
+		    console.log(lineName + " throu get " + lineget); 
+	    };
 
- 		/*	initialiseDot(dots.first(), 66);
- 			initialiseDot(dots.last(), 65);*/
-
-		}, 1000); 
+    }, 15000);             
 
 }
 

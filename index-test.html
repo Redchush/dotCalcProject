@@ -10,11 +10,13 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.js"></script>
+     <!--  <script src="js/bootstrap.js"></script> -->
     
   <!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+ <!--  <link href="css/bootstrap.css" rel="stylesheet"> -->
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+   <link href="css/dotMenu.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,16 +26,45 @@
 
   </head>
    <body>
-
-    <div class="dotMenus">
-      <form>
-          <input type=text size = 1 max-lenght = 1 class="this formText">           
-          <buttom type=submit class="formText  buttom-container "> 
-              <div class=bottom-line arrow> </div> 
-              <div class=triangle-right arrow> </div> 
+<!--
+<ul class="dotMenuBox">
+<script> $(".dotMenuBox").css("display", "block") </script>
+  <li> 
+      <form id="dotNameForm">
+          <input type="text" size = 1 max-lenght = 1 class="inputChar formText" id>           
+          <buttom type="submit" class="formText  buttom-container "> 
+              <div class="bottom-line arrow"> </div> 
+              <div class="triangle-right arrow"> </div> 
           </buttom>   
       </form>
-  </div> 
+      
+      </li>     
+</ul> -->
+
+
+
+<ul class="dotMenuBox" >
+  <li > 
+      <form id="dotNameForm">
+          <input type="text" size = 1 max-lenght = 1 class="inputChar formText" id>           
+          <buttom type="submit" class="formText  buttom-container "> 
+              <div class="bottom-line arrow"> </div> 
+              <div class="triangle-right arrow"> </div> 
+          </buttom>   
+      </form>
+    </li>
+    
+  <li> 
+      <div class="btn_dropdown"></div>  
+      <div class= "dotMenuButtoms">
+        <button class="edit_btn"></button> 
+        <button class="edit_btn"></button> 
+        <button class="edit_btn"></button> 
+      </div> 
+  </li> 
+</ul> 
+
+
   <div class = "dot">left</div>'
 <!-- toolbar  -->
   <div class="tool-container">

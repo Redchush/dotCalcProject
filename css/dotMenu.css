@@ -1,0 +1,97 @@
+/*icons-edition* to poor chose*/
+ul.dotMenuBox{
+ position: relative;
+ padding: 0;
+ list-style: none;
+ width: 110px;
+ height: auto; 
+ background: white;
+ border: 1px solid black;  
+}
+
+ul.dotMenuBox > li {
+  margin : 0px; 
+  padding: 0px; 
+}
+ul.dotMenuBox > li:first-child {
+    padding: 5px 5px 0px 5px; 
+}
+
+.dotMenuButtoms { 
+   position: relative;
+   list-style: none;
+   padding: 0px 5px 5px ;
+
+}
+
+.btn_dropdown  {
+   width: 100%;
+   height: 5px;
+   border-radius: 2px;
+   background: gray;  
+   margin: 5px 0px; 
+ }
+ .edit_btn{
+    width: 30.5px;
+    height: 30px;
+    background-image: url(images/icons-edition.png); 
+    background-repeat: no-repeat; 
+    background-size: 450px auto; 
+    background-position: -3px -49px;
+    margin: 0px; 
+}
+.dotMenuButtoms > button:nth-child(2n) {
+   background-position: -95px -188px;
+}
+
+.dotMenuButtoms > button:nth-child(3n)  {
+   background-position: -188px -189px;
+}
+
+
+/*  <ul class= "dotMenuButtoms"> 
+        <li> </li>
+        <li> <button class="edit_btn"></button> </li>
+        <li> <button class="edit_btn"></button> </li> 
+        <li> <button class="edit_btn"></button> </li> 
+      </ul> 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+*/
+
+.formText{
+    position: relative;
+    display: inline-block;   
+    border: 1px solid gray;
+    height: 100%;
+    box-sizing: border-box; 
+}
+#dotNameForm{
+   display: block; 
+   background: white;
+   height: 25px;  
+}
+.inputChar{
+   width: 50px;  
+}
+
+/* arrow in buttom */
+.buttom-container{
+  width: 27px;
+  float: right; 
+  background-image: url(images/icons-edition.png); 
+  background-repeat: no-repeat; 
+  background-size: 400px auto; 
+  background-position: -42px -2px;
+}
